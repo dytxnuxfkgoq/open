@@ -46,3 +46,21 @@ if van:
     print("van benne 3a osztható szám","indexe:",i)
 else:
     print("nincs benne 3al oszt szam")
+    
+    
+vegyeslista = ["alma",400,"körte",650,500,"narancs"]
+szamok = []
+gyumolcsok = []
+for x in vegyeslista:
+    if type(x) == str:
+        gyumolcsok.append(x)
+    else:
+        szamok.append(str(x))
+
+print(szamok)
+print(gyumolcsok)
+
+vegyes = open("vegyes.txt","w", encoding="UTF-8")
+for sor in vegyeslista:
+    vegyes.write(str(sor)+"\n")
+print(vegyeslista)    

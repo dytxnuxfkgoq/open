@@ -64,3 +64,53 @@ vegyes = open("vegyes.txt","w", encoding="UTF-8")
 for sor in vegyeslista:
     vegyes.write(str(sor)+"\n")
 print(vegyeslista)    
+
+#minimum keresés a listában
+list = [6,4,79,56,42,7,5,43,8]
+print(list)
+min=list[0]
+for i in list:
+    if i<min:
+        min=i
+print("A legkissebb elem:",min)        
+
+#maximum keresés a listában
+max=list[0]
+for i in list:
+    if i>max:
+        max=i
+print("A legnagyobb elem:",max)
+
+osztalyzat = open("osztalyzatok.txt","r", encoding="UTF-8")
+list = []
+for sor in osztalyzat:
+    list.append(sor.strip()[-1])
+
+osztalyzat.close()    
+osszeg=0
+db5=0
+print(list)
+for i in list:
+    print(i[-1])
+    n=int(i[-1])
+    osszeg+=n
+    if n==5:
+        db5+=1
+print("Jegyek átlaga:", osszeg/len(list))    
+print("Ennyi darab ötös van:",db5)"""
+
+bevasarlas = open("bevasarlas.txt","r",encoding="UTF-8")
+list = []
+for sor in bevasarlas:
+    list.append(sor.strip().replace("Ft","").replace("ft","").split())
+bevasarlas.close()
+print(list)    
+osszeg = 0
+for i in list:
+    n=int(i[-1])
+    if n>500:
+        print(" ".join(i),"drága termék")
+    else:
+        print(" ".join(i),"normális árú")        
+    osszeg+=n
+print("Ennyit fizettem:",osszeg)

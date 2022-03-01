@@ -114,3 +114,59 @@ for i in list:
         print(" ".join(i),"normális árú")        
     osszeg+=n
 print("Ennyit fizettem:",osszeg)
+
+import random
+
+list = []
+for x in range(20):
+    x = random.randint(0,30)
+    list.append(x)
+print(list)    
+
+legkisebb = list[0]
+for x in list:
+    if x<legkisebb:
+        legkisebb = x
+print(f"{legkisebb} a legkisebb szám")
+
+legnagyobb = list[0]
+for x in list:
+    if x>legnagyobb:
+        legnagyobb = x
+print(f"{legnagyobb} a legnagyobb szám")
+
+otkisebb = 0
+otnagyobb = 0
+for x in list:
+    if x < 15:
+        otkisebb+=1
+    else:
+        otnagyobb+=1
+print(f"{otkisebb} tizenotnel kisebb es {otnagyobb} nagyobb van")
+
+for x in range(len(list)):
+    print(x,list[x])
+
+f = open("veletlen.txt","w",encoding="UTF-8")
+for sor in list:
+    x = str(sor)
+    f.write(x+"\n")
+f.close()
+
+osszeg = 0
+for x in list:
+    osszeg += x
+print(osszeg//len(list))
+
+def prim(a):
+    oszto=0
+    for x in range(1,a+1):
+        if a % x == 0:
+            oszto+=1
+    if oszto==2:
+        return "prim"
+    else:
+        return "nem prim"
+
+for i in list:
+    print(i,prim(i))

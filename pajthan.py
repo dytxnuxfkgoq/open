@@ -170,3 +170,27 @@ def prim(a):
 
 for i in list:
     print(i,prim(i))
+
+nev = input("Kérek egy nevet:")
+for x in nev:
+    print(x)
+
+f = open("nagybetus.txt","w",encoding="UTF-8")
+szo = input("Kérek egy szót:")
+for sor in szo:
+    f.write(sor.upper()+"\n")   
+    
+
+a = open("nagybetus.txt","a",encoding="UTF-8")
+varos1 = input("Város 1:")
+varos2 = input("Város 2:")
+varos3 = input("Város 3:")
+varosok=varos1
+a.write(varosok)
+a.close()
+    
+z = open("nagybetus.txt","r",encoding="UTF-8")
+if "Veszprém" in z or "VESZPRÉM" in z:
+    print("van")
+else:
+    print("nincs")
